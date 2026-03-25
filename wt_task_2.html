@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            height: 250px;
+            width: 100%;
+        }
+        button{
+            margin-top: 20px;
+            padding: 4px;
+        }
+        .show{
+            margin-top: 30px;
+            width: 300px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <p>Enter your text</p>
+    <input id="in">
+    <button onclick="show_text()">Analyze Text</button>
+    <div class="show" id="show_text"></div>
+</body>
+<script>
+    function show_text()
+    {
+        var txt = document.getElementById('in').value;
+        
+        var len = txt.length;
+        var cnt = 0;
+        cnt = txt.trim().split(/\s+/).length;
+        var reverse_txt = txt.split('').reverse().join('');
+
+        if(len == 0)
+        {
+            reverse_txt = "Input is empty"
+        }
+
+        document.getElementById('show_text').innerHTML="Total Characters : " + len +"<br> Total Characters : "+ cnt +
+                                                       "<br> Reverse Text : "+reverse_txt;
+        console.log(cnt);
+    }
+</script>
+</html>
